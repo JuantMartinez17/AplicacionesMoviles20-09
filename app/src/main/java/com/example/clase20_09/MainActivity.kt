@@ -18,6 +18,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        binding.btnSave.setOnClickListener{
+            val name = binding.etName.text.toString()
+            saveName(name)
+        }
+
+        binding.btnLoad.setOnClickListener {
+            val name = loadName()
+            binding.tvResult.text = name
+        }
     }
 
     private fun saveName(name: String){
