@@ -27,4 +27,9 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
+    private fun loadName(): String? {
+        val sharedPreferences = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+        return sharedPreferences.getString(KEY_NAME, "No results found")
+    }
+
 }
