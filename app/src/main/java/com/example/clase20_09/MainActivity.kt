@@ -11,9 +11,16 @@ import com.example.clase20_09.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val PREFERENCES_NAME = "myprefs"
+    private val KEY_NAME = "name"
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
     }
+
+    private fun saveName(){
+        
+    }
+
 }
