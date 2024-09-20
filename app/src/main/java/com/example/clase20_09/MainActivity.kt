@@ -1,5 +1,6 @@
 package com.example.clase20_09
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.enableEdgeToEdge
@@ -19,8 +20,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private fun saveName(){
-        
+    private fun saveName(name: String){
+        val sharedPreferences = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString(KEY_NAME, name)
+        editor.apply()
     }
 
 }
